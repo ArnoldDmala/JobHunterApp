@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b0195d344904d2397855983cf12abf3" Name="Diagram1">
+        <EntityTypeShape EntityType="JobHunterDBModel.AccountType" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.Application" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.JobType" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.Listing" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.Message" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.QuestionAnswer" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.Question" Width="1.5" PointX="6" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.Review" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.Star" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobHunterDBModel.User" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Users_AccountType" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Application_Listings" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Application_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Listings_JobType" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Questions_Listings" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Messages_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Messages_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_QuestionAnswers_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_QuestionAnswers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Reviews_Stars" ManuallyRouted="false" />
+        <AssociationConnector Association="JobHunterDBModel.FK_Reviews_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,50 @@
+﻿@model JobHunterApp.Models.Message
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Message</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User1.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User1.email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MessageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

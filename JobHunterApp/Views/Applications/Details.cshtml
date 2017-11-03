@@ -1,0 +1,34 @@
+﻿@model JobHunterApp.Models.Application
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Listing.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Listing.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

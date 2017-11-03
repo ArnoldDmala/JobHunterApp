@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -53,6 +59,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -142,9 +150,64 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountTypesController.cs" />
+    <Compile Include="Controllers\ApplicationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobTypesController.cs" />
+    <Compile Include="Controllers\ListingsController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\QuestionAnswersController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
+    <Compile Include="Controllers\StarsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountType.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Application.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobHunterModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobHunterModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobHunterModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobHunterModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobHunterModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobType.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Listing.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Message.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Question.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuestionAnswer.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Star.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>JobHunterModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,10 +218,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\JobHunterModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JobHunterModel.edmx</DependentUpon>
+      <LastGenOutput>JobHunterModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\JobHunterModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JobHunterModel.edmx</DependentUpon>
+      <LastGenOutput>JobHunterModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\JobHunterModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JobHunterModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\JobHunterModel.edmx.diagram">
+      <DependentUpon>JobHunterModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -185,10 +265,59 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Applications\Create.cshtml" />
+    <Content Include="Views\Applications\Delete.cshtml" />
+    <Content Include="Views\Applications\Details.cshtml" />
+    <Content Include="Views\Applications\Edit.cshtml" />
+    <Content Include="Views\Applications\Index.cshtml" />
+    <Content Include="Views\JobTypes\Create.cshtml" />
+    <Content Include="Views\JobTypes\Delete.cshtml" />
+    <Content Include="Views\JobTypes\Details.cshtml" />
+    <Content Include="Views\JobTypes\Edit.cshtml" />
+    <Content Include="Views\JobTypes\Index.cshtml" />
+    <Content Include="Views\Listings\Create.cshtml" />
+    <Content Include="Views\Listings\Delete.cshtml" />
+    <Content Include="Views\Listings\Details.cshtml" />
+    <Content Include="Views\Listings\Edit.cshtml" />
+    <Content Include="Views\Listings\Index.cshtml" />
+    <Content Include="Views\QuestionAnswers\Create.cshtml" />
+    <Content Include="Views\QuestionAnswers\Delete.cshtml" />
+    <Content Include="Views\QuestionAnswers\Details.cshtml" />
+    <Content Include="Views\QuestionAnswers\Edit.cshtml" />
+    <Content Include="Views\QuestionAnswers\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\AccountTypes\Create.cshtml" />
+    <Content Include="Views\AccountTypes\Delete.cshtml" />
+    <Content Include="Views\AccountTypes\Details.cshtml" />
+    <Content Include="Views\AccountTypes\Edit.cshtml" />
+    <Content Include="Views\AccountTypes\Index.cshtml" />
+    <Content Include="Views\Questions\Create.cshtml" />
+    <Content Include="Views\Questions\Delete.cshtml" />
+    <Content Include="Views\Questions\Details.cshtml" />
+    <Content Include="Views\Questions\Edit.cshtml" />
+    <Content Include="Views\Questions\Index.cshtml" />
+    <Content Include="Views\Messages\Create.cshtml" />
+    <Content Include="Views\Messages\Delete.cshtml" />
+    <Content Include="Views\Messages\Details.cshtml" />
+    <Content Include="Views\Messages\Edit.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Reviews\Create.cshtml" />
+    <Content Include="Views\Reviews\Delete.cshtml" />
+    <Content Include="Views\Reviews\Details.cshtml" />
+    <Content Include="Views\Reviews\Edit.cshtml" />
+    <Content Include="Views\Reviews\Index.cshtml" />
+    <Content Include="Views\Stars\Create.cshtml" />
+    <Content Include="Views\Stars\Delete.cshtml" />
+    <Content Include="Views\Stars\Details.cshtml" />
+    <Content Include="Views\Stars\Edit.cshtml" />
+    <Content Include="Views\Stars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -202,6 +331,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
