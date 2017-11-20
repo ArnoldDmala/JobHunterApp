@@ -26,5 +26,7 @@ namespace JobHunterApp.Controllers
 
             return View();
         }
+
+
     }
 }
