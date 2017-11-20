@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetBrowser, Version=1.13.0.0, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetBrowser.1.13\lib\DotNetBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser.Chromium, Version=1.13.0.0, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetBrowser.1.13\lib\DotNetBrowser.Chromium.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -170,6 +176,13 @@
     <Compile Include="Models\Application.cs">
       <DependentUpon>JobHunterModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GoogMap.aspx.cs">
+      <DependentUpon>GoogMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\GoogMap.aspx.designer.cs">
+      <DependentUpon>GoogMap.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\JobHunterModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +223,13 @@
       <DependentUpon>JobHunterModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GoogleMapsForm.aspx.cs">
+      <DependentUpon>GoogleMapsForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GoogleMapsForm.aspx.designer.cs">
+      <DependentUpon>GoogleMapsForm.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -218,6 +238,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\GoogMap.aspx" />
     <Content Include="Models\JobHunterModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>JobHunterModel.edmx</DependentUpon>
@@ -233,6 +254,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="GoogleMapsForm.aspx" />
     <EntityDeploy Include="Models\JobHunterModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>JobHunterModel.Designer.cs</LastGenOutput>

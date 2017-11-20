@@ -128,5 +128,19 @@ namespace JobHunterApp.Controllers
             }
             base.Dispose(disposing);
         }
+        public void myMap()
+        {
+            /*var MapOptions =
+            {
+                center: new google.maps.LatLng(51.5, -0.12)
+                zoom: 10,
+                mapTypeID: google.maps.MapTypeId.HYBRID
+
+            }
+            
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);*/
+        }
+
+
     }
 }
