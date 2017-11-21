@@ -12,7 +12,7 @@ namespace JobHunterApp.Controllers
         public ActionResult Search(string SearchString)
         {
             ViewBag.SearchString = SearchString;
-            ViewBag.Title = "Search";
+            ViewBag.Message = "Search";
             return View("SearchResult");
         }
     }
