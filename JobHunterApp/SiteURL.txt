@@ -1,0 +1,10 @@
+﻿
+
+
+
+
+
+
+
+
+FOR SEARCH TO WORK URL MUST BE http://upstatejobhunter.azurewebsites.net !!!!!!

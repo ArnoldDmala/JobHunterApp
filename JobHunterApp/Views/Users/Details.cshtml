@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>User</h4>
+    <h4>Account Information</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -16,14 +16,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.password)
         </dd>
 
         <dt>
@@ -49,10 +41,22 @@
         <dd>
             @Html.DisplayFor(model => model.AccountType.AccType)
         </dd>
-
+        @*<% if(model.AccountType.AccType == "Business"){
+        @Html.ActionLink("Edit Account info", "Edit", new { id = Model.UserID })
+        @Html.ActionLink("Messages", "Index", new { id = Model.UserID });
+        @Html.ActionLink("Post a Job listing", "Create", new { id = Model.UserID })
+        } %>
+        <% if(model.AccountType.AccType == "Job-Hunter"){
+        @Html.ActionLink("Edit Account info", "Edit", new { id = Model.UserID })
+        @Html.ActionLink("Messages", "Index", new { id = Model.UserID });
+        } %>
+        <% if(model.AccountType.AccType == "Admin"){
+        @Html.ActionLink("Edit Account info", "Edit", new { id = Model.UserID })
+        @Html.ActionLink("Messages", "Index", new { id = Model.UserID });
+        @Html.ActionLink("Businesses", "Index", new { AccType = "Business" });
+        @Html.ActionLink("Job-Hunters", "Index", new { AccType = "Job-Hunters" }));
+        @Html.ActionLink("Listings", "Index");
+        } %>*@
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

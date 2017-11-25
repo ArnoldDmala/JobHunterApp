@@ -6,6 +6,16 @@
     <h1>Upstate Job Hunter</h1>
     <p class="lead"><i>We're here to help find the right job for you!</i></p>
     <p><a href="/Home/About" class="btn btn-primary btn-lg">Learn More About Us &raquo;</a></p>
+    <div class="searchControl">
+        <br />
+        @using (Html.BeginForm("Search", "Search", FormMethod.Get))
+        {
+            <div class="input-group">
+                <input type="text" name="SearchString" class="form-control" placeholder="Press Enter to Search">
+                  <input class="btn btn-primary btnlg" type="submit" value="Search &raquo;" />
+            </div><!-- /input-group -->
+        }
+    </div>
 </div>
 
 <div class="row">
@@ -18,12 +28,12 @@
     </div>
     <div class="col-md-4">
         <h2>Create An Account</h2>
-        <p>Sign up in order to post job reviews</p>
-        <p><a class="btn btn-default" href="/Users/Create">Learn more &raquo;</a></p>
+        <p>Sign up in order to find jobs and post reviews<br />Click the button to sign up</p>
+        <p><a class="btn btn-default" href="/Users/Create">Sign Up &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Have A Question?</h2>
+        <p>Please send us a message if you have any questions<br />Click the button to send a message</p>
+        <p><a class="btn btn-default" href="/Messages/Index">Send A Message &raquo;</a></p>
     </div>
 </div>
