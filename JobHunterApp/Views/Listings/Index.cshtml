@@ -9,57 +9,71 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.LocationID)
-            
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.JobType.TypeName)
-        </th>
-        <th>
-            @Html.DisplayText("Google Map Locale")
-            <!---@Html.DisplayNameFor(model => model.JobType.TypeID)-->
-        </th>
-        
-    </tr>
+<body style='background: #00ff21'>
+    
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocationID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.JobType.TypeName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ListingID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ListingID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ListingID })
-        </td>
-    </tr>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationID)
 
-}
-    b
-</table>
-<div id="map">My map will go here</div>
-<div id="map">style="width:400px;height:400px" </div>
-<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
-<div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.4611940474756!2d-81.88984884917784!3d34.9701109761528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88570b188a1bd345%3A0xbd782733013d02cd!2sChick-fil-A!5e0!3m2!1sen!2sus!4v1510790118259" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-</div>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobType.TypeName)
+            </th>
+            <th>
+                GoogleMap
+                <!---Html.DisplayNameFor(model => model.JobType.TypeID)-->
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocationID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobType.TypeName)
+                </td>
+                <td>
+                    <button onclick="myFunction()">Find It!</button>
+
+                    <script>
+                        function myFunction() {
+                            window.open("/GoogleMapTest.aspx");
+                        }
+                    </script>
+                    <!----Html.ActionLink("Find It!", "Index", "GoogleMaps")-->
+                    <!--window.open("http://localhost:63661/GoogleMapTest.aspx")-->
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ListingID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ListingID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ListingID })
+                </td>
+            </tr>
+
+        }
+    </table>
+</body>
+<!--Deletion territory start-->
+
+<!--Deletion territory end-->
+
+
 
 

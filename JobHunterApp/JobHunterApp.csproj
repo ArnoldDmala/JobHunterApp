@@ -158,6 +158,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountTypesController.cs" />
     <Compile Include="Controllers\ApplicationsController.cs" />
+    <Compile Include="Controllers\GoogleMapsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobTypesController.cs" />
     <Compile Include="Controllers\ListingsController.cs" />
@@ -238,6 +239,13 @@
     <Compile Include="GoogleMapsForm.aspx.designer.cs">
       <DependentUpon>GoogleMapsForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Listings\ListingGS.aspx.cs">
+      <DependentUpon>ListingGS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Listings\ListingGS.aspx.designer.cs">
+      <DependentUpon>ListingGS.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -282,6 +290,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Listings\ListingGS.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -346,6 +355,7 @@
     <Content Include="Views\Stars\Details.cshtml" />
     <Content Include="Views\Stars\Edit.cshtml" />
     <Content Include="Views\Stars\Index.cshtml" />
+    <Content Include="Views\GoogleMaps\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

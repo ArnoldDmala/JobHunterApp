@@ -1,30 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GoogleMapTest.aspx.cs" Inherits="JobHunterApp.GoogleMapTest" %>
+﻿@{
+    ViewBag.Title = "Index";
+}
 
-<!DOCTYPE html>
 <h2>Google Map Location</h2>
-<html>
-  <head>
-    <title>Job Location</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%; /*was 100%*/
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%; /*was 100%*/
-        margin-left: 50px; /*margin: 0;*/
-        margin-right: 50px;
-        margin-top: 0px;
-        margin-bottom: 80px;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
+<body>
     <div id="map"></div>
     <script>
         var map;
@@ -48,7 +27,8 @@
                     icon: iconBase + 'info-i_maps.png'
                 },
                 actualLocal: {
-                    icon: pushBase + 'pink-pushpin.png'}
+                    icon: pushBase + 'pink-pushpin.png'
+                }
             };
 
             var features = [
@@ -127,8 +107,17 @@
         }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZN5TwwiKsWxSdZ_idyIprTxtAcY_JSk
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZN5TwwiKsWxSdZ_idyIprTxtAcY_JSk
 &callback=initMap">
     </script>
-  </body>
-</html>
+</body>
+
+
+
+
+
+
+
+
+
+

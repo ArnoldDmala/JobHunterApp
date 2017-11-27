@@ -1,10 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GoogleMapTest.aspx.cs" Inherits="JobHunterApp.GoogleMapTest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListingGS.aspx.cs" Inherits="JobHunterApp.Views.Listings.WebForm1" %>
 
 <!DOCTYPE html>
-<h2>Google Map Location</h2>
 <html>
   <head>
-    <title>Job Location</title>
+    <title>Custom Markers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -18,7 +17,7 @@
         height: 100%; /*was 100%*/
         margin-left: 50px; /*margin: 0;*/
         margin-right: 50px;
-        margin-top: 0px;
+        margin-top: 150px;
         margin-bottom: 80px;
         padding: 0;
       }
