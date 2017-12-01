@@ -39,8 +39,10 @@ namespace JobHunterApp.Controllers
         // GET: Messages/Create
         public ActionResult Create()
         {
-            ViewBag.RecipientID = new SelectList(db.Users, "UserID", "email");
-            ViewBag.SenderID = new SelectList(db.Users, "UserID", "email");
+            ViewBag.UserID = new SelectList(db.Users, "From: ");
+            ViewBag.UserID = new SelectList(db.Users,  "To: ");
+            ViewBag.MessageID = new SelectList(db.Messages, "subject", "MessageContent");
+       
             return View();
         }
 
@@ -49,7 +51,7 @@ namespace JobHunterApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MessageID,RecipientID,SenderID,subject,MessageContent")] Message message)
+        public ActionResult Create([Bind(Include = "MessageID,RecipientID.email,SenderID.email,subject,MessageContent")] Message message)
         {
             if (ModelState.IsValid)
             {
@@ -58,8 +60,8 @@ namespace JobHunterApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.RecipientID = new SelectList(db.Users, "UserID", "email", message.RecipientID);
-            ViewBag.SenderID = new SelectList(db.Users, "UserID", "email", message.SenderID);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "To", message.RecipientID);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "From", message.SenderID);
             return View(message);
         }
 
@@ -75,8 +77,8 @@ namespace JobHunterApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.RecipientID = new SelectList(db.Users, "UserID", "email", message.RecipientID);
-            ViewBag.SenderID = new SelectList(db.Users, "UserID", "email", message.SenderID);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "To", message.RecipientID);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "From", message.SenderID);
             return View(message);
         }
 
@@ -93,8 +95,8 @@ namespace JobHunterApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.RecipientID = new SelectList(db.Users, "UserID", "email", message.RecipientID);
-            ViewBag.SenderID = new SelectList(db.Users, "UserID", "email", message.SenderID);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "To", message.RecipientID);
+            ViewBag.UserID = new SelectList(db.Users, "UserID", "From", message.SenderID);
             return View(message);
         }
 

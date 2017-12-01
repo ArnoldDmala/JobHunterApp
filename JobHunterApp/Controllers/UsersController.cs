@@ -39,7 +39,7 @@ namespace JobHunterApp.Controllers
         // GET: Users/Create
         public ActionResult Create()
         {
-            ViewBag.AccID = new SelectList(db.AccountTypes, "AccID", "AccType");
+            ViewBag.AccID = new SelectList(db.AccountTypes, "AccType");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace JobHunterApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,email,password,FirstName,LastName,AccID")] User user)
+        public ActionResult Create([Bind(Include = "UserID,email,password,FirstName,LastName,AccType")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace JobHunterApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID,email,password,FirstName,LastName,AccID")] User user)
+        public ActionResult Edit([Bind(Include = "UserID,email,password,FirstName,LastName,AccType")] User user)
         {
             if (ModelState.IsValid)
             {
