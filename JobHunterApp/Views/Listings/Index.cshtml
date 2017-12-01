@@ -54,11 +54,18 @@
 
                     <script>
                         function myFunction() {
+
+                            //query string passing
+                            //var actualLocation = Html.DisplayTextFor(modelItem => item.Location).ToString();
+                            //34.9956098333
+                            var koop = parseFloat(34.9956098333);
+                            localStorage.setItem('zorg', koop);
                             window.open("/GoogleMapTest.aspx");
                         }
+
                     </script>
                     <!----Html.ActionLink("Find It!", "Index", "GoogleMaps")-->
-                    <!--window.open("http://localhost:63661/GoogleMapTest.aspx")-->
+                    <!--window.open("")-->
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ListingID }) |
@@ -69,6 +76,7 @@
 
         }
     </table>
+
 </body>
 <!--Deletion territory start-->
 

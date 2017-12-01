@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GoogleMapTest.aspx.cs" Inherits="JobHunterApp.GoogleMapTest" %>
 
+
 <!DOCTYPE html>
 <h2>Google Map Location</h2>
 <html>
@@ -11,7 +12,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%; /*was 100%*/
+        height: 100%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -27,11 +28,70 @@
   <body>
     <div id="map"></div>
     <script>
+        //EDIT 2:01 PM - parseFloat WORKS!
+        //Declaring local map variables to be used
+        //var map;
+        //var locat = parseFloat(Session["actualLocat"]);
+        //var halfLocat;
         var map;
+        /*var locations = [];
+        function initialize()
+        {
+            var myLatlng = new google.maps.LatLng(0.0, 0.0);
+            var myOptions = {
+                zoom: 4,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            //if you want to store your coordinates as a stingg you should be consistent
+            locations.push("0.0,0.0");
+            show_markers();
+        }
+
+        //EDIT 3:32 PM - localStorage WORKS!
+        var locat = localStorage.getItem('zorg');
+
+        //Array Creation
+        var locations = [];
+
+        locations.push(localStorage.getItem('zorg'));
+
+        function show_Markers()
+        {
+            for (var i = 0; i < locations.length; i++) {
+                //if you are expecting a user to input a single pair of coordinates in the input box you will need to do this
+                var loc = locations[i].split(",")
+                var lat = parseFloat(loc[0])
+                var lng = parseFloat(loc[1])
+                map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 16,
+                    center: new google.maps.LatLng(lat, lng),
+                    mapTypeid: 'roadmap'
+                });
+
+            }
+        }*/
+
+
+
+        //var locat = parseFloat(34.9956098333);
+        var halfLocat = parseFloat(-81.9699969856);
+        
+        localStorage.setItem(locat, koop);
+        var dbLocat = parseFloat(locat);
+        //sessionStorage.setItem(fullLocat, koop)
+        //sessionStorage.setItem(locat, 34.9956098333)
+        //sessionStorage.setItem(half, -81.9699969856)
+        //var longit = new google.maps.LatLng(locat, halfLocat);
+        //fullLocat = locat + "," + longit;
+
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 16,
-                center: new google.maps.LatLng(34.9956098333, -81.9699969856),
+                //34.9956098333, -81.9699969856)
+                //new google.maps.Latlng(34.9956098333 , -81.9699969856)
+                center: new google.maps.LatLng(34.995609833, -81.9699969856),
                 mapTypeId: 'roadmap'
             });
 
@@ -48,7 +108,8 @@
                     icon: iconBase + 'info-i_maps.png'
                 },
                 actualLocal: {
-                    icon: pushBase + 'pink-pushpin.png'}
+                    icon: pushBase + 'pink-pushpin.png'
+                }
             };
 
             var features = [
@@ -111,7 +172,8 @@
                     type: 'library'
                 },
                 {
-                    position: new google.maps.LatLng(34.995, -81.969),
+                    //34.995,-81.969
+                    position: new google.maps.LatLng(34.9956098333, -81.9699969586),
                     type: 'actualLocal'
                 }
             ];
@@ -125,6 +187,7 @@
                 });
             });
         }
+
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZN5TwwiKsWxSdZ_idyIprTxtAcY_JSk

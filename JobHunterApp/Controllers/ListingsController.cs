@@ -140,6 +140,8 @@ namespace JobHunterApp.Controllers
             
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);*/
         }
+     
+
        
 
 
